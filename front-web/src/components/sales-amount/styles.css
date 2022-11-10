@@ -1,0 +1,13 @@
+.sales-amount-container {
+    margin-bottom: 40px;
+}
+
+.sales-amount {
+    font-size: 36px;
+}
+
+.sales-amount-description {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--grey-color);
+}
