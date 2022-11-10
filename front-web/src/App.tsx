@@ -1,10 +1,11 @@
 import './App.css';
+import Header from './components/header';
 
 function App() {
   return (
-    <div className="App">
-      <h1>DS Sales Challenge</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
