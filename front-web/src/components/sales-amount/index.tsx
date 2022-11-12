@@ -6,7 +6,7 @@ import { totalSumSales } from './helpers';
 import './styles.css';
 
 type Props = {
-    storeId: number;
+    storeId?: number;
 }
 
 const SalesAmount = ({ storeId }: Props) => {

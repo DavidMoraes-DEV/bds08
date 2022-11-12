@@ -3,10 +3,10 @@ INSERT INTO tb_category(name) VALUES ('Cosméticos e higiene pessoal');
 INSERT INTO tb_category(name) VALUES ('Utilidades domésticas');
 INSERT INTO tb_category(name) VALUES ('Roupas e acessórios');
 
-INSERT INTO tb_store(name) VALUES('Uberaba');
-INSERT INTO tb_store(name) VALUES('Uberlândia');
-INSERT INTO tb_store(name) VALUES('Araguari');
-INSERT INTO tb_store(name) VALUES('Ituiutaba');
+INSERT INTO tb_store(name) VALUES('Londrina');
+INSERT INTO tb_store(name) VALUES('Maringá');
+INSERT INTO tb_store(name) VALUES('Jaguapitã');
+INSERT INTO tb_store(name) VALUES('Curitiba');
 
 INSERT INTO tb_payment_method(description) VALUES ('Crédito');
 INSERT INTO tb_payment_method(description) VALUES ('Débito');

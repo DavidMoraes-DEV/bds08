@@ -1,4 +1,4 @@
-import { FilterData, SalesByGender, Store } from "./types"
+import { SalesByGender } from "./types"
 import { formatGender } from "./utils/formatters";
 
 export const buildSalesByGenreChart = (sales: SalesByGender[]) => {
@@ -7,8 +7,3 @@ export const buildSalesByGenreChart = (sales: SalesByGender[]) => {
 
     return {labels, series};
 }
-
-export const filterStoreId = (stores: Store[], filterData?: FilterData) => {
-    const store = stores.find((store) => store.name === filterData?.store);
-    return store?.id;
-};

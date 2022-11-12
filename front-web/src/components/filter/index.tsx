@@ -1,31 +1,48 @@
-import React, { useState } from 'react';
-import { FilterData, SelectedStore } from '../../types';
-import './styles.css';
+import { useEffect, useState } from "react";
+import Select from "react-select";
+import { FilterData, Store } from "../../types";
+import { makeRequest } from "../../utils/request";
+import "./styles.css";
 
 type Props = {
-    onFilterChange: (filter: FilterData) => void;
-}
+  onFilterChange: (filter: FilterData) => void;
+};
 
 const Filter = ({ onFilterChange }: Props) => {
-    const [selectedStore, setSelectedStore] = useState<SelectedStore>();
+  const [stores, setStory] = useState<Store[]>([]);
 
-    const onChangeStore = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const newSelectedStore = event.target.value as SelectedStore;
-        setSelectedStore(newSelectedStore);
-        onFilterChange({store: newSelectedStore });
-    };
+  useEffect(() => {
+    makeRequest
+      .get<Store[]>("/stores")
+      .then((response) => {
+        setStory(response.data);
+      })
+      .catch(() => {
+        console.error("Error to fetch store");
+      });
+  }, []);
 
-    return (
-        <div className='base-card filter-container'>
-            <select className='filter-input' value={selectedStore} onChange={onChangeStore}>
-                <option value="">Selecione uma cidade</option>
-                <option value="Araguari">Araguari</option>
-                <option value="Ituiutaba">Ituiutaba</option>
-                <option value="Uberaba">Uberaba</option>
-                <option value="Uberlândia">Uberlândia</option>
-            </select>
-        </div>
-    );
-}
+  const handleChangeStore = (value: Store) => {
+    if (value === null) {
+      value = { id: 0, name: "" };
+      onFilterChange({ store: value });
+    }
+    onFilterChange({ store: value });
+  };
+
+  return (
+    <form className="base-card filter-container">
+      <Select
+        options={stores}
+        classNamePrefix="filter-input"
+        isClearable
+        placeholder="Selecione uma cidade"
+        getOptionLabel={(store: Store) => store.name}
+        getOptionValue={(store: Store) => String(store.id)}
+        onChange={(value) => handleChangeStore(value as Store)}
+      />
+    </form>
+  );
+};
 
 export default Filter;

@@ -1,5 +1,4 @@
 export type Gender = 'MALE' | 'FEMALE' | 'OTHER';
-export type SelectedStore = 'Araguari' | 'Ituiutaba' | 'Uberaba' | 'Uberlândia';
 
 export type Store = {
     id: number;
@@ -20,7 +19,7 @@ export type SalesSummary = {
 };
 
 export type FilterData = {
-    store: SelectedStore;
+    store: Store;
 };
 
 export type PieChartConfig = {
