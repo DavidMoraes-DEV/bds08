@@ -1,6 +1,6 @@
 import { ApexOptions } from 'apexcharts';
 
-export const buildPieChartConfig = (labels: string[] = [], name: string) => {
+export const buildPieChartConfig = (labels: string[] = []) => {
   return {
     labels,
     noData: {
@@ -40,13 +40,6 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
           size: '50%',
           labels: {
             show: true,
-            name: {
-              show: true,
-              offsetY: 10,
-              formatter: function () {
-                return name;
-              }
-            },
             total: {
               show: false,
               showAlways: true,

@@ -11,3 +11,17 @@
     font-weight: 400;
     color: var(--grey-color);
 }
+
+@media (min-width: 992px) {
+    .sales-amount-container {
+        margin-bottom: 0;
+    }
+
+    .sales-amount {
+        font-size: 50px;
+    }
+
+    .sales-amount-description {
+        font-size: 25px;
+    }
+}

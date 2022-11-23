@@ -12,10 +12,10 @@ const PieChart = ({ labels = [], name, series = []}: Props) => {
     return (
         <div className='pie-chart'>
             <ReactApexChart
-                options={buildPieChartConfig(labels, name)}
+                options={buildPieChartConfig(labels)}
                 type="donut"
                 width={"100%"}
-                height={"300px"}
+                height={"350px"}
                 series={series}
             />
         </div>
